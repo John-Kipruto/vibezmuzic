@@ -1,0 +1,14 @@
+export { default as Home } from "./Home";
+export { default as AddPlaylist } from "./AddPlaylist";
+export { default as Artists } from "./Artists";
+export { default as Buzz } from "./Buzz";
+export { default as Charts } from "./Charts";
+export { default as Favourites } from "./Favourites";
+export { default as Genres } from "./Genres";
+export { default as MyPlaylist } from "./MyPlaylist";
+export { default as New } from "./New";
+export { default as Playlists } from "./Playlists";
+export { default as Podcasts } from "./Podcasts";
+export { default as Trending } from "./Trending";
+export { default as Videos } from "./Videos";
+export { default as NotFound } from "./NotFound";
