@@ -15,10 +15,10 @@ const App = () => {
     <div className="bg-black text-white">
       <Navbar toggleShowSidebar={toggleShowSidebar} />
       <div className="grid grid-cols-7 min-h-dvh py-2">
-        <div className="col-span-1 hidden lg:block py-2 px-4">
+        <div className="col-span-1 hidden lg:block py-2 px-4 sticky top-10 h-fit">
           <Sidebar />
         </div>
-        <div className="col-span-6 p-4">
+        <div className="col-span-7 lg:col-span-6 p-4">
           <AppRoutes />
         </div>
       </div>
