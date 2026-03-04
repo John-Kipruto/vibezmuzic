@@ -1,3 +1,4 @@
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import React, { useRef } from "react";
 
 type SmoothRowProps = {
@@ -16,19 +17,19 @@ const SmoothRow = ({ children }: SmoothRowProps) => {
     });
   };
   return (
-    <div className="relative group">
+    <div className="relative group ">
       {/* LEFT BUTTON */}
       <button
         onClick={() => scroll("left")}
-        className="absolute left-0 top-0 h-full w-12 bg-black/50 opacity-0 group-hover:opacity-100 transition z-10"
+        className="absolute left-0 top-0 h-full w-12 bg-black/50 opacity-0 group-hover:opacity-100 hover:cursor-pointer transition z-10"
       >
-        ◀
+        <ChevronLeftIcon className="w-7 h-7" />
       </button>
 
       {/* SCROLL ROW */}
       <div
         ref={rowRef}
-        className="flex gap-4 overflow-hidden scroll-smooth scrollbar-hide w-full "
+        className="flex gap-7 overflow-hidden scroll-smooth scrollbar-hide w-full "
       >
         {children}
       </div>
@@ -36,9 +37,9 @@ const SmoothRow = ({ children }: SmoothRowProps) => {
       {/* RIGHT BUTTON */}
       <button
         onClick={() => scroll("right")}
-        className="absolute right-0 top-0 h-full w-12 bg-black/50 opacity-0 group-hover:opacity-100 transition z-10"
+        className="absolute right-0 top-0 h-full w-12 bg-black/50 opacity-0 group-hover:opacity-100 hover:cursor-pointer transition z-10"
       >
-        ▶
+        <ChevronRightIcon className="w-7 h-7" />
       </button>
     </div>
   );

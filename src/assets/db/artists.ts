@@ -1,7 +1,7 @@
-import { images } from "./images";
+import { artistsImages } from "./images";
 import { shuffle } from "../../utils/random";
 
-const artistImages = shuffle(images).slice(0, 30);
+const artistImages = shuffle(artistsImages).slice(0, 30);
 
 const names = [
   "Liam",

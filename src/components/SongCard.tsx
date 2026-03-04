@@ -1,7 +1,7 @@
 import { usePlayer } from "../context/PlayerContext";
 
 export const SongCard = ({ song }: any) => {
-  const { currentSong, isPlaying, playSong, pauseSong } = usePlayer();
+  const { isPlaying, playSong, pauseSong } = usePlayer();
 
   return (
     <div className="cursor-pointer hover:bg-neutral-800 p-2 rounded-lg flex gap-6 items-center">

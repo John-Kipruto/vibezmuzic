@@ -1,6 +1,6 @@
 import { albums } from "./albums";
 import { randomItem } from "../../utils/random";
-import { images } from "./images";
+import { coversImages } from "./images";
 
 const demoAudio =
   "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
@@ -119,6 +119,6 @@ export const songs = Array.from({ length: 60 }, (_, i) => {
     }`,
     audio: demoAudio,
     plays: Math.floor(Math.random() * 1_000_000),
-    image: randomItem(images),
+    image: randomItem(coversImages),
   };
 });

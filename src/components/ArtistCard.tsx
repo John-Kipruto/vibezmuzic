@@ -8,7 +8,7 @@ const ArtistCard = (props: ArtistProp) => {
   const { artist } = props;
 
   return (
-    <div className="text-center w-full ">
+    <div className="text-center w-full aspect-square hover:cursor-pointer ">
       <img
         src={artist.image}
         alt="artist"
