@@ -1,7 +1,8 @@
 import { songs } from "../assets/db/songs";
 import { artists } from "../assets/db/artists";
-import { SongCard } from "../components/SongCard";
 import SmoothRow from "../components/SmoothRow";
+import { playlists } from "../assets/db/playlists";
+import { charts } from "../assets/db/charts";
 
 export const trendingSongs = [...songs]
   .sort((a, b) => b.plays - a.plays)
@@ -13,25 +14,62 @@ export const featuredArtists = [...artists]
 
 const Home = () => {
   return (
-    <div>
+    <div className="flex flex-col gap-8">
       <div>
-        <h2 className="text-xl font-bold mb-4">Trending</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <h2 className="text-xl font-bold mb-4">Trending Songs</h2>
+        <SmoothRow>
           {trendingSongs.map((song) => (
-            <SongCard key={song.id} song={song} />
+            <div className="shrink-0 rounded-md">
+              <img
+                key={song.id}
+                src={song.image}
+                className="w-44 h-44 aspect-square rounded-md"
+              />
+            </div>
+            // <SongCard key={song.id} song={song} />
           ))}
-        </div>
+        </SmoothRow>
       </div>
 
       <div>
-        <h2 className="text-xl font-bold mt-10 mb-4">Featured Artists</h2>
+        <h2 className="text-xl font-bold mt-10 mb-4">Popular Artists</h2>
         <SmoothRow>
           {featuredArtists.map((artist) => (
             <img
               key={artist.id}
               src={artist.image}
-              className="w-40 h-40 rounded-full  transition"
+              className="w-44 h-44 rounded-full  transition"
             />
+          ))}
+        </SmoothRow>
+      </div>
+
+      <div className="flex flex-col gap-3">
+        <h1 className="font-bold text-lg">Weekly Top Charts</h1>
+        <SmoothRow>
+          {charts.slice(0, 14).map((chart) => (
+            <div className="shrink-0 rounded-md">
+              <img
+                key={chart.id}
+                src={chart.cover}
+                className="w-44 h-44 aspect-square rounded-md"
+              />
+            </div>
+          ))}
+        </SmoothRow>
+      </div>
+
+      <div className="flex flex-col gap-3">
+        <h1 className="font-bold text-lg">Weekly Top Albums</h1>
+        <SmoothRow>
+          {playlists.slice(15, 30).map((playlist) => (
+            <div className="shrink-0 rounded-md">
+              <img
+                key={playlist.id}
+                src={playlist.cover}
+                className="w-44 h-44 aspect-square rounded-md"
+              />
+            </div>
           ))}
         </SmoothRow>
       </div>

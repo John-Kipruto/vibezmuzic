@@ -1,6 +1,6 @@
 import { songs } from "./songs";
 import { shuffle } from "../../utils/random";
-import { images } from "./images";
+import { coversImages } from "./images";
 
 const titles = [
   "Late Night Vibes",
@@ -38,6 +38,6 @@ const titles = [
 export const playlists = Array.from({ length: 30 }, (_, i) => ({
   id: `playlist-${i + 1}`,
   name: titles[Math.floor(Math.random() * 30)],
-  cover: images[i],
+  cover: coversImages[i],
   songs: shuffle(songs).slice(0, 10),
 }));
